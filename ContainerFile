@@ -1,9 +1,12 @@
 FROM registry.access.redhat.com/ubi8
 RUN dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y \
     && dnf update \
-    && dnf install sudo htop nload vnstat curl wget -y \
+    && dnf install -y sudo htop nload vnstat curl wget xz libXi libXxf86vm libXfixes libXrender libGL \
     && dnf clean all \
-  	&& rm -rf /var/cache/yum
+  	&& rm -rf /var/cache/yum 
+# RUN mkdir /opt/blender && tar xvf /tmp blender*.xz -C /opt/blender
+
+
 ENTRYPOINT ["tail"]
 CMD ["-f","/dev/null"]
 
