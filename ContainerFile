@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8
 RUN dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y \
     && dnf update \
-    && dnf install -y sudo htop nload vnstat curl wget xz libXi libXxf86vm libXfixes libXrender libGL ncurses\
+    && dnf install -y sudo htop nload vnstat curl wget xz libXi libXxf86vm libXfixes libXrender libGL ncurses unzip\
     && dnf clean all \
   	&& rm -rf /var/cache/yum \
     && cd /tmp && wget -nc https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.1-linux-x64.tar.xz \
