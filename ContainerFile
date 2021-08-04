@@ -5,7 +5,7 @@ RUN dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noar
     && dnf clean all \
   	&& rm -rf /var/cache/yum \
     && cd /tmp && wget -nc https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.93/blender-2.93.1-linux-x64.tar.xz \
-    && tar -xvf blender*.xz -C /opt && ln -s /opt/blender-2.93.1-linux-x64/blender /usr/bin/blender
+    && tar -xvf blender*.xz -C /opt && rm /tmp/blender* && ln -s /opt/blender-2.93.1-linux-x64/blender /usr/bin/blender
 
 # RUN mkdir /opt/blender && tar xvf /tmp blender*.xz -C /opt/blender
 
